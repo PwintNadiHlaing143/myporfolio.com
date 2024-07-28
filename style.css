@@ -1,0 +1,186 @@
+/* General start */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary-color: #20242d;
+  --secondary-color: #04eff8;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  background-color: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+}
+section {
+  width: 100%;
+  height: 100vh;
+}
+/* General end */
+/* navbar section start */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  z-index: 1;
+}
+.navbar.active {
+  background-color: #20242d;
+}
+.navList {
+  display: flex;
+  /* flex property */
+  gap: 30px;
+}
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+.navList li a {
+  transition: all 0.5s ease;
+}
+
+.navList li a:hover {
+  color: var(--secondary-color);
+}
+/* navbar section end */
+/* landing section start */
+#multiple-text {
+  color: var(--secondary-color);
+}
+.landing-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  width: 50%;
+}
+.content h4 {
+  font-size: 2rem;
+}
+.content h2 {
+  font-size: 4rem;
+}
+.social-media {
+  display: flex;
+  gap: 30px;
+  margin: 20px 0;
+}
+.social-media a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid var(--secondary-color);
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+.social-media a:hover {
+  background-color: var(--secondary-color);
+}
+/* for svg color important*/
+.social-media a svg path {
+  fill: var(--secondary-color);
+}
+.social-media a:hover svg path {
+  fill: var(--primary-color);
+}
+.downloadBtn {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: var(--secondary-color);
+  color: black;
+  border-radius: 30px;
+  font-weight: bold;
+  /* for effect element with spread values */
+  box-shadow: 0px 0px 4px 4px var(--secondary-color);
+  transition: all 0.5s ease;
+}
+.downloadBtn:hover {
+  box-shadow: none;
+  /* outline is not effected over the element */
+  outline: 2px solid var(--secondary-color);
+  /* default color and all the time this color is effected */
+  background-color: transparent;
+  color: white;
+}
+.image img {
+  width: 500px;
+  animation: bounce 1s ease-in infinite;
+}
+/* for up to down animation */
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(15px);
+  }
+}
+#menu-icon {
+  display: none;
+}
+/* stop up to down animatiion */
+/* landing section end */
+/* media queries */
+/* for desktop view */
+@media screen and (max-width: 991px) {
+  .landing-section {
+    padding: 5rem 0;
+  }
+}
+/* for tablet view */
+@media screen and (max-width: 768px) {
+}
+/* for phone view */
+@media screen and (max-width: 576px) {
+  #menu-icon {
+    display: block;
+  }
+  .navList {
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 75px;
+    right: 0;
+    display: none;
+    padding: 50px;
+    box-shadow: 3px 3px 3px var(--primary-color);
+  }
+  .navList li {
+    padding: 20px;
+  }
+  .navList.show {
+    display: block;
+  }
+  .image img {
+    margin-top: 20px;
+    width: 300px;
+  }
+
+  .content h4 {
+    font-size: 1.5rem;
+  }
+  .content h2 {
+    font-size: 3.5rem;
+    width: 100%;
+  }
+  .content p {
+    font-size: 1rem;
+  }
+  
+}
